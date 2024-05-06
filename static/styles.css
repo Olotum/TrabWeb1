@@ -60,7 +60,6 @@ body {
         display: none;
     }
 }
-
 .custom-card-oque-somos {
     background-color: rgba(0, 0, 0, 0.7);
     border: none;
@@ -75,4 +74,77 @@ body {
     transform: translate(-50%, -50%);
     z-index: -1;
     max-width: 600px;
+}
+
+.custom-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px;
+}
+
+body {
+    background-image: url('mulher-trabalhando-cafeteria.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+
+.navbar-brand img {
+    height: 80px;
+    width: auto;
+}
+
+.custom-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.custom-form input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.custom-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.custom-form input[type="date"],
+.custom-form input[type="time"],
+.custom-form input[type="number"],
+.custom-form input[type="text"],
+.custom-form input[type="tel"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.custom-form input[type="date"]::placeholder,
+.custom-form input[type="time"]::placeholder,
+.custom-form input[type="number"]::placeholder,
+.custom-form input[type="text"]::placeholder,
+.custom-form input[type="tel"]::placeholder {
+    color: #fff;
+}
+
+.custom-form .btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+}
+
+.custom-form .btn-whatsapp:hover {
+    background-color: #128c7e;
+    color: #fff;
 }

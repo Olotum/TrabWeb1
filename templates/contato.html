@@ -4,13 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <title>Contato - TechCoffe</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .logo-simples {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            max-width: 200px;
+        }
+
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,17 +77,35 @@
         </div>
     </nav>
 
-    <div class="custom-card">
-        <div class="card-body">
-            <h5 class="card-title">A Inovação começa com um bom café</h5>
-            <p class="card-text">Se você está pronto para inovar, entre em contato conosco pelo WhatsApp.</p>
-            <a href="https://wa.me/55123456789?text=Olá! Gostaria de mais informações sobre inovação."
-                class="btn btn-whatsapp btn-block" target="_blank"><i class="fab fa-whatsapp"></i> Entrar em
-                contato pelo WhatsApp</a>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-4 custom-card-oque-somos">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Contato</h1>
+                        <p class="card-text">
+                            Av. Alberto Bins, 324 - Centro Histórico<br>
+                            (51)3029-4739<br>
+                            <a href="mailto:contato@techcoffe.com.br">contato@techcoffe.com.br</a>
+                        </p>
+                        <p class="card-text">
+                            Siga-nos em nossas redes sociais para ficar por dentro de promoções, ações e novidades =)
+                        </p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="#" class="btn btn-primary btn-lg"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.631615036172!2d-51.2203586848969!3d-30.028282732789653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197749c59c6d1f%3A0x78f02f0916118ae6!2sAv.%20Alberto%20Bins%2C%20324%20-%20Centro%20Hist%C3%B3rico%2C%20Porto%20Alegre%20-%20RS%2C%2090000-001!5e0!3m2!1sen!2sbr!4v1620004721893!5m2!1sen!2sbr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
         </div>
     </div>
-
-    <img src="/static/logo-simples.png" class="logo-right" alt="Logo Simples">
 
     <!-- Bootstrap JS and Font Awesome JS (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

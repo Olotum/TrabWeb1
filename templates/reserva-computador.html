@@ -4,27 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O que Somos - TechCoffe</title>
+    <title>Reserva de Computador - TechCoffe</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/styles.css">
-    <style>
-        .container {
-            position: relative;
-        }
-
-        .logo-simples {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            max-width: 200px;
-        }
-    </style>
 </head>
 
 <body>
@@ -65,32 +51,57 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card mb-4 custom-card-oque-somos">
+                <div class="card mb-4 custom-form">
                     <div class="card-body">
-                        <h1 class="card-title text-center">O que somos</h1>
-                        <p class="card-text">TechCoffe é mais do que uma simples cafeteria. É um espaço onde a tradição
-                            do café encontra a
-                            inovação de um ambiente cibernético. Aqui, buscamos oferecer mais do que apenas uma xícara
-                            de
-                            café, proporcionamos uma experiência completa para quem procura um local ideal para trabalho
-                            e
-                            estudo.</p>
-                        <p class="card-text">Em meio ao modo de vida turbulento percebemos que nem todos podiam se dar
-                            ao luxo de sentar e
-                            tomar uma boa xícara de café num lugar confortável e calmo, então resolvemos trazer a
-                            solução, o
-                            TechCoffe!!!</p>
-                        <p class="card-text">Aqui combinamos a atmosfera relaxante de uma cafeteria com a praticidade de
-                            um espaço de trabalho
-                            moderno. Venha nos visitar e descubra como podemos tornar suas horas de trabalho ou estudo
-                            mais
-                            produtivas e agradáveis.</p>
+                        <h1 class="card-title text-center">Reserva de Computador</h1>
+                        <form id="reservationForm">
+                            <div class="form-group">
+                                <label for="data">Data:</label>
+                                <input type="date" class="form-control" id="data" name="data" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="horario">Horário:</label>
+                                <input type="time" class="form-control" id="horario" name="horario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantidade">Quantidade de Computadores (máx. 10):</label>
+                                <input type="number" class="form-control" id="quantidade" name="quantidade" min="1"
+                                    max="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" class="form-control" id="nome" name="nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contato">Contato:</label>
+                                <input type="tel" class="form-control" id="contato" name="contato" required>
+                            </div>
+                            <button type="button" class="btn btn-whatsapp" onclick="enviarReserva()"><i
+                                    class="fab fa-whatsapp"></i> Reservar computadores via WhatsApp</button>
+                        </form>
                     </div>
-                    <img src="/static/logo-simples.png" alt="Logo Simples" class="logo-simples">
                 </div>
             </div>
         </div>
     </div>
+    
+    <script>
+        function enviarReserva() {
+            var data = document.getElementById("data").value;
+            var horario = document.getElementById("horario").value;
+            var quantidade = document.getElementById("quantidade").value;
+            var nome = document.getElementById("nome").value;
+            var contato = document.getElementById("contato").value;
+    
+            var mensagem = encodeURIComponent("Olá! Gostaria de fazer uma reserva de computadores no TechCoffe: \nData:" + data +
+                "\nHorário: " + horario + "\nQuantidade de Computadores: " + quantidade + "\nNome: " + nome + "\nContato: " + contato);
+    
+            var link = "https://api.whatsapp.com/send?phone=5551992257746&text=" + mensagem;
+    
+            window.open(link, '_blank');
+        }
+    </script>
+    
 
     <!-- Bootstrap JS and Font Awesome JS (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
