@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - TechCoffe</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .product-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-card .btn-add-to-cart {
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .product-card .btn-add-to-cart:hover {
+            background-color: #128c7e;
+            color: #fff;
+        }
+
+        #cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #cart:hover {
+            background-color: #128c7e;
+        }
+
+        #cart i {
+            margin-top: 3px;
+        }
+
+        #cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/static/logo-texto.png" alt="Logo da Empresa">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="oque-somos.html">O que Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Serviços
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="reserva-mesa.html">Reserva de Mesas</a>
+                            <a class="dropdown-item" href="reserva-computador.html">Reserva de Computador</a>
+                            <a class="dropdown-item" href="marketplace.html">Marketplace</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="/static/cafe1.jpg" alt="Café">
+                    <h5 class="mt-2">Café Especial</h5>
+                    <p>R$ 5,00</p>
+                    <button class="btn btn-add-to-cart btn-block" data-product="Café Especial" data-price="5.00">Adicionar ao carrinho</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="/static/cafe2.jpg" alt="Café">
+                    <h5 class="mt-2">Café com Leite</h5>
+                    <p>R$ 6,00</p>
+                    <button class="btn btn-add-to-cart btn-block" data-product="Café com Leite" data-price="6.00">Adicionar ao carrinho</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="/static/cafe3.jpg" alt="Café">
+                    <h5 class="mt-2">Cappuccino</h5>
+                    <p>R$ 7,00</p>
+                    <button class="btn btn-add-to-cart btn-block" data-product="Cappuccino" data-price="7.00">Adicionar ao carrinho</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="/static/sanduiche1.jpg" alt="Sanduíche">
+                    <h5 class="mt-2">Sanduíche de Queijo</h5>
+                    <p>R$ 10,00</p>
+                    <button class="btn btn-add-to-cart btn-block" data-product="Sanduíche de Queijo" data-price="10.00">Adicionar ao carrinho</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="/static/sanduiche2.jpg" alt="Sanduíche">
+                    <h5 class="mt-2">Sanduíche de Presunto</h5>
+                    <p>R$ 10,00</p>
+                    <button class="btn btn-add-to-cart btn-block" data-product="Sanduíche de Presunto" data-price="10.00">Adicionar ao carrinho</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="/static/bolo1.jpg" alt="Bolo">
+                    <h5 class="mt-2">Bolo de Chocolate</h5>
+                    <p>R$ 15,00</p>
+                    <button class="btn btn-add-to-cart btn-block" data-product="Bolo de Chocolate" data-price="15.00">Adicionar ao carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="cart">
+        <i class="fas fa-shopping-cart"></i>
+        <div id="cart-count">0</div>
+    </a>
+
+    <button class="btn btn-success btn-lg btn-finalizar" style="position: fixed; bottom: 20px; right: 100px;"><i
+            class="fas fa-check"></i> Finalizar Pedido</button>
+
+    <!-- Bootstrap JS and Font Awesome JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        var cartCount = 0;
+        var cartItems = {};
+
+        $(document).ready(function () {
+            $(".btn-add-to-cart").click(function () {
+                var product = $(this).data("product");
+                var price = $(this).data("price");
+
+                if (cartItems.hasOwnProperty(product)) {
+                    cartItems[product].quantity++;
+                } else {
+                    cartItems[product] = {
+                        price: price,
+                        quantity: 1
+                    };
+                }
+
+                cartCount++;
+                $("#cart-count").text(cartCount);
+            });
+
+            $(".btn-finalizar").click(function () {
+                var message = "Pedido:\n";
+
+                for (var item in cartItems) {
+                    message += cartItems[item].quantity + "x " + item + " - R$ " + (cartItems[item].price * cartItems[item].quantity).toFixed(2) + "\n";
+                }
+
+                message += "\nTotal: R$ " + calcularTotal().toFixed(2);
+
+                var link = "https://api.whatsapp.com/send?phone=5551992257746&text=" + encodeURIComponent(message);
+
+                window.open(link, '_blank');
+            });
+
+            function calcularTotal() {
+                var total = 0;
+                for (var item in cartItems) {
+                    total += cartItems[item].price * cartItems[item].quantity;
+                }
+                return total;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
